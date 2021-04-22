@@ -2,16 +2,24 @@ import React, { useState, useEffect } from 'react';
 import styles from '../InputForm/InputForm.module.css';
 
 const InputForm = () => {
-  const
+  const [inputValue, setInputValue] = useState('');
+
+  handleSubmit = e => {
+    e.preventDefault();
+  };
+
+  handleChange = e => {
+    setInputValue(e.target.value);
+  };
   return (
     <>
-      {/* <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           <span className={styles.inputTitle}>Name</span>
           <input
             name="name"
             value={name}
-            onChange={this.handleChange}
+            onChange={handleChange}
             className={styles.input}
             required
           />
@@ -33,7 +41,7 @@ const InputForm = () => {
           Submit
         </button>
       </form>
-    </> */}
+    </>
   );
 
   // state = {
