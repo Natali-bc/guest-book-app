@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // import 'dayjs/locale/es';
 import styles from '../ReviewsList/ReviewsList.module.css';
 

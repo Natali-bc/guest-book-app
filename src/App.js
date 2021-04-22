@@ -15,17 +15,20 @@ const App = () => {
 
     reviewsApi
       .fetchReviews()
-      .then(reviews => setReviews({ reviews }))
+      .then(reviews => setReviews(reviews))
       .catch(error => setError(error))
       .finally(() => setLoading(false));
   }, []);
 
+  const addReview = review => {
+    setReviews([review, ...reviews]);
+  };
   return (
     <>
       <div className={style.container}>
         <h1> Welcome to guest book</h1>
 
-        <InputForm />
+        <InputForm onReviewAdded={addReview} />
         <h2>Reviews</h2>
         <div className={styles.wrapper}>
           <ReviewsList reviews={reviews} />
@@ -35,4 +38,4 @@ const App = () => {
   );
 };
 
-export default { App };
+export default App;
