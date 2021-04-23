@@ -21,14 +21,11 @@ const App = () => {
   }, []);
 
   const handleSubmit = review => {
-    reviewsApi.addReview(review);
-    addNewReview(review);
+    reviewsApi.addReview(review).then(newReview => {
+      setReviews([newReview, ...reviews]);
+    });
   };
 
-  const addNewReview = review => {
-    const newReview = reviewsApi.addReview(review);
-    setReviews([newReview, ...reviews]);
-  };
   return (
     <>
       <div className={style.container}>
