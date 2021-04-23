@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../InputForm/InputForm.module.css';
 
-const InputForm = () => {
+const InputForm = ({ submitHandler }) => {
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const review = {
-      username,
-      content,
-    };
-  };
-
   return (
     <>
-      <form onSubmit={handleSubmit} onReviewCreated={handleSubmit.review}>
+      <form onSubmit={submitHandler}>
         <label>
           <span className={styles.inputTitle}>Name</span>
           <input

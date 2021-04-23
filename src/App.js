@@ -20,7 +20,17 @@ const App = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const addReview = review => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const review = {
+      username,
+      content,
+    };
+    reviewsApi.addReview(review);
+    addNewReview(review);
+  };
+
+  const addNewReview = review => {
     setReviews([review, ...reviews]);
   };
   return (
@@ -28,7 +38,7 @@ const App = () => {
       <div className={style.container}>
         <h1> Welcome to guest book</h1>
 
-        <InputForm onReviewAdded={addReview} />
+        <InputForm submitHandler={handleSubmit} />
         <h2>Reviews</h2>
         <div className={styles.wrapper}>
           <ReviewsList reviews={reviews} />
