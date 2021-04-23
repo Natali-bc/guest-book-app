@@ -2,7 +2,7 @@ import React from 'react';
 // import 'dayjs/locale/es';
 import styles from '../ReviewsList/ReviewsList.module.css';
 
-const ReviewListItem = ({ review: { username, content } }) => {
+const ReviewListItem = ({ review: { id, username, content } }) => {
   // const date = Date.now();
   return (
     <div className={styles.wrapper}>

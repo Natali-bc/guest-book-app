@@ -26,7 +26,8 @@ const App = () => {
   };
 
   const addNewReview = review => {
-    setReviews([review, ...reviews]);
+    const newReview = reviewsApi.addReview(review);
+    setReviews([newReview, ...reviews]);
   };
   return (
     <>
