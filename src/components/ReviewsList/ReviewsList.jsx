@@ -4,7 +4,7 @@ import styles from '../ReviewsList/ReviewsList.module.css';
 
 const ReviewsList = ({ reviews }) => {
   return (
-    <div className={styles.wrapper}>
+    <div>
       <ul className={styles.reviewList}>
         {reviews.map(review => {
           return <ReviewsListItem review={review} key={review._id} />;

@@ -1,13 +1,35 @@
-/* .wrapper {
-  margin-bottom: 10px;
-  border: 1px solid midnightblue;
-  width: 300px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin: 10px auto;
-  border-radius: 5px;
-} */
-
 .reviewList {
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: 0;
+  padding-left: 0;
+}
+.reviewListItem {
+  list-style: none;
+  min-height: 50px;
+  border: 0.5px solid rgb(88, 54, 88);
+  border-radius: 5px;
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: rgb(185, 136, 231);
+}
+.username {
+  display: flex;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.date {
+  display: flex;
+  padding-left: 10px;
+}
+
+.content {
+  display: block;
+  word-wrap: break-word;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  font-style: italic;
+  font-size: larger;
 }

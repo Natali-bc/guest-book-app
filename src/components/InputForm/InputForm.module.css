@@ -1,18 +1,32 @@
+.mainForm {
+  display: flex;
+  flex-direction: column;
+}
 .inputTitle {
   display: flex;
-  padding-right: 5px;
-  margin-left: 5px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 330px;
 }
 .input {
   height: 20px;
+  width: 220px;
+  margin-right: 175px;
 }
 .input:hover,
 .input:focus {
-  border: 3px solid blueviolet;
+  border: 3px solid rgb(7, 7, 7);
 }
+.inputMessage:hover,
+.inputMessage:focus {
+  border: 3px solid rgb(7, 7, 7);
+}
+
 .inputMessage {
-  width: 220px;
-  height: 100px;
+  width: 400px;
+  height: 200px;
+  margin-bottom: 20px;
 }
 .btn {
   width: 100px;
@@ -20,6 +34,11 @@
   font-size: 15px;
   border-radius: 3px;
   color: rgb(252, 252, 248);
+  background-color: rgb(79, 79, 160);
+  margin-top: 20px;
+  margin: 0 auto;
+}
+.btn:hover,
+.btn:focus {
   background-color: blue;
-  margin-left: 10px;
 }

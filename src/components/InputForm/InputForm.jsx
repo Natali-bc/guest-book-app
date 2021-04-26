@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from '../InputForm/InputForm.module.css';
 
 const InputForm = ({ onSubmit }) => {
@@ -7,6 +7,7 @@ const InputForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log('object');
     const review = {
       username,
       content,
@@ -17,21 +18,23 @@ const InputForm = ({ onSubmit }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.mainForm}>
         <label>
-          <span className={styles.inputTitle}>Name</span>
+          <span className={styles.inputTitle}>Name:</span>
           <input
             name="name"
             value={username}
+            placeholder="Your name"
             onChange={e => setUsername(e.target.value)}
             className={styles.input}
             required
           />
         </label>
         <label>
-          <span className={styles.inputTitle}>Comment</span>
-          <input
-            name="inputValue"
+          <span className={styles.inputTitle}>Feedback:</span>
+          <textarea
+            name="feedback"
+            placeholder="Type your message here..."
             value={content}
             onChange={e => setContent(e.target.value)}
             className={styles.inputMessage}
@@ -39,7 +42,7 @@ const InputForm = ({ onSubmit }) => {
           />
         </label>
         <button type="submit" className={styles.btn}>
-          Submit
+          Add review
         </button>
       </form>
     </>

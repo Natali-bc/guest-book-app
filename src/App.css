@@ -1,4 +1,6 @@
-.container {
-  display: block;
+body {
   margin: 0 auto;
+  text-align: center;
+  background-color: rgb(207, 187, 187);
+  font-size: large;
 }

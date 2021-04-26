@@ -1,16 +1,16 @@
 import React from 'react';
-// import 'dayjs/locale/es';
+import moment from 'moment';
 import styles from '../ReviewsList/ReviewsList.module.css';
 
-const ReviewListItem = ({ review: { id, username, content } }) => {
-  // const date = Date.now();
+const ReviewListItem = ({ review: { username, content, date } }) => {
+  const dateNow = moment(date).format('MMMM Do YYYY, h:mm:ss a');
   return (
-    <div className={styles.wrapper}>
-      <li className={styles.reviewListItem}>
-        <span>{username}</span>
-        <span>{content}</span>
-      </li>
-    </div>
+    <li className={styles.reviewListItem}>
+      <span className={styles.username}>{username}</span>
+
+      <span className={styles.date}>{dateNow}</span>
+      <span className={styles.content}>{content}</span>
+    </li>
   );
 };
 

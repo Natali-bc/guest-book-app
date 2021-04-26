@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import reviewsApi from './utils/reviews-api';
-import style from './App.css';
+import './App.css';
 import InputForm from './components/InputForm/InputForm.jsx';
 import ReviewsList from './components/ReviewsList/ReviewsList';
-import styles from './components/ReviewsList/ReviewsList.module.css';
+import AppBar from './components/AppBar/AppBar.jsx';
+import style from './components/InputForm/InputForm.module.css';
+import Loader from './components/Loader/Loader';
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
@@ -21,6 +23,7 @@ const App = () => {
   }, []);
 
   const handleSubmit = review => {
+    console.log('Hello');
     reviewsApi.addReview(review).then(newReview => {
       setReviews([newReview, ...reviews]);
     });
@@ -29,13 +32,12 @@ const App = () => {
   return (
     <>
       <div className={style.container}>
-        <h1> Welcome to guest book</h1>
-
+        <AppBar />
         <InputForm onSubmit={handleSubmit} />
         <h2>Reviews</h2>
-        <div className={styles.wrapper}>
-          <ReviewsList reviews={reviews} />
-        </div>
+        {loading ? <Loader /> : null}
+        {error?.Error ? <p>Error: {error.Error}</p> : null}
+        <ReviewsList reviews={reviews} />
       </div>
     </>
   );
