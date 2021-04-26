@@ -7,7 +7,6 @@ const InputForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('object');
     const review = {
       username,
       content,

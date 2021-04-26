@@ -4,8 +4,8 @@ import './App.css';
 import InputForm from './components/InputForm/InputForm.jsx';
 import ReviewsList from './components/ReviewsList/ReviewsList';
 import AppBar from './components/AppBar/AppBar.jsx';
-import style from './components/InputForm/InputForm.module.css';
 import Loader from './components/Loader/Loader';
+import style from './components/InputForm/InputForm.module.css';
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
