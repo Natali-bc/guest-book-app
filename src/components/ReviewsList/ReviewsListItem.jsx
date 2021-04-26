@@ -3,7 +3,7 @@ import moment from 'moment';
 import styles from '../ReviewsList/ReviewsList.module.css';
 
 const ReviewListItem = ({ review: { username, content, date } }) => {
-  const dateNow = moment(date).format('MMMM Do YYYY, h:mm:ss a');
+  const dateNow = moment(date).format('MMMM Do YYYY, h:mm');
   return (
     <li className={styles.reviewListItem}>
       <span className={styles.username}>{username}</span>
