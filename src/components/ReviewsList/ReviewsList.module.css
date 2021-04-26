@@ -17,6 +17,7 @@
   display: flex;
   padding-left: 10px;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 .date {
   display: flex;
