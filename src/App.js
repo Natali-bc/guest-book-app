@@ -23,7 +23,6 @@ const App = () => {
   }, []);
 
   const handleSubmit = review => {
-    console.log('Hello');
     reviewsApi.addReview(review).then(newReview => {
       setReviews([newReview, ...reviews]);
     });
